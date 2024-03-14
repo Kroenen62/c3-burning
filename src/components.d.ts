@@ -6,56 +6,38 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface C3Burning {
+        "bgColor": number;
+        "height": number;
+        "width": number;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLC3BurningElement extends Components.C3Burning, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLC3BurningElement: {
+        prototype: HTMLC3BurningElement;
+        new (): HTMLC3BurningElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "c3-burning": HTMLC3BurningElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface C3Burning {
+        "bgColor"?: number;
+        "height"?: number;
+        "width"?: number;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "c3-burning": C3Burning;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "c3-burning": LocalJSX.C3Burning & JSXBase.HTMLAttributes<HTMLC3BurningElement>;
         }
     }
 }
